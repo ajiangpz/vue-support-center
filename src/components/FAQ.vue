@@ -1,12 +1,12 @@
 <template>
   <main class="faq">
     <h1>Frenquently Asked Questions</h1>
-    <div class="error" v-if="error">
+    <div class="error" v-if="hasRemoteErrors">
       Can't load the questions
     </div>
-    <Loading v-if="loading"></Loading>
+    <Loading v-if="remoteDataBusy"></Loading>
     <section class="list">
-      <article v-for="question of questions" :key="question.title">
+      <article v-for="question of questionList" :key="question.title">
         <h2 v-html="question.title"></h2>
         <p v-html="question.content"></p>
         <p></p>
@@ -17,22 +17,6 @@
 <script>
 import RemoteData from '../mixins/remoteData';
 export default {
-  data() {
-    return {
-      questions: [],
-      error:null,
-      loading:false
-    };
-  },
-  async created() {
-    this.loading=true;
-    try {
-      this.questions=await this.$get("/questions");
-    } catch(e) {
-      this.error=e
-    }
-    this.loading=false;
-  },
-  mixins:[RemoteData]
+  mixins:[RemoteData({questionList:'/questions'})]
 };
 </script>
