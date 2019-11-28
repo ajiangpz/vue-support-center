@@ -12,11 +12,14 @@
         <p></p>
       </article>
     </section>
+
   </main>
 </template>
 <script>
 import RemoteData from '../mixins/remoteData';
 export default {
   mixins:[RemoteData({questionList:'/questions'})]
+
 };
+
 </script>

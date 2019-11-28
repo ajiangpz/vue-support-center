@@ -4,7 +4,10 @@ import router from './router'
 import store from './store'
 import './mock'
 import './global-components'
-import vueGet from  './plugins/get'
+import 'element-ui/lib/theme-chalk/index.css'
+import vueGet from  './plugins/'
+import elementUI from 'element-ui'
+Vue.use(elementUI)
 Vue.use(vueGet,{
   baseUrl:''
 })

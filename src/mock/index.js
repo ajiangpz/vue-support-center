@@ -10,6 +10,12 @@ function getQs(len) {
   }
   return questions
 }
+Mock.mock("/login",'post',function(options){
+  
+  const {username}=JSON.parse(options.body);
+  return username
+
+})
 Mock.setup({
   timeout:300
 })

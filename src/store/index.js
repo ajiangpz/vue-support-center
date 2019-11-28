@@ -8,6 +8,9 @@ export default new Vuex.Store({
     user:null
   },
   mutations: {
+    SET_USER(state,playload){
+      state.user=playload.username
+    }
   },
   actions: {
   },
