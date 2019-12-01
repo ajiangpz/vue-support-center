@@ -114,8 +114,7 @@ export default {
         })
       });
       this.$store.commit('SET_USER',{username:username})
-      this.$router.push({name:'home'})
-      //TODO
+      this.$router.replace(this.$route.params.wantedRoute||{name:'home'})
     }
   }
 };

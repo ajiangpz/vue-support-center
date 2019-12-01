@@ -10,9 +10,9 @@
         {{ error }}
       </div>
     </section>
-
+    <transition name="fade">
       <Loading v-if="busy" class="overlay"></Loading>
- 
+    </transition>
   </form>
 </template>
 <script>

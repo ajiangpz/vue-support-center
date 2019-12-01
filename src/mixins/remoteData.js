@@ -31,7 +31,10 @@ export default function(resources) {
       async getResource(key, url) {
         this.remoteDataLoading++;
         try {
-          this.$data[key] = await this.$axios(url);
+          const result = await this.$axios(url);
+          console.log(result.data);
+          
+          this.$data[key]=result.data
         } catch (e) {
           console.log(e);
           this.$data.remoteErrors[key] = e;
