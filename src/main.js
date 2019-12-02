@@ -14,14 +14,14 @@ Vue.use( axios,{
 })
 //路由拦截
 router.beforeEach((to,from,next)=>{
-  if(to.meta.private&&!store.state.user){
+  if(to.matched.some(r=>r.meta.private)&&!store.state.user){
     next({name:'login',params:{
       wantedRoute:to.fullPath
     }});
-    return;
+    return; 
   }
   
-  if(to.meta.guest&&store.state.user){
+  if(to.matched.some(r=>r.meta.guest)&&store.state.user){
     
     next({name:'home'});
     return;

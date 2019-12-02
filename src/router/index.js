@@ -4,6 +4,8 @@ import Home from '../components/Home.vue'
 import FAQ from '../components/FAQ.vue'
 import Login from '../components/Login.vue'
 import TicketsLayout from '../components/TicketsLayout.vue'
+import Tickets from '../components/Tickets.vue'
+import NewTicket from '../components/NewTicket.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -27,12 +29,22 @@ const routes = [
   },
   {
     path:'/tickets',
-    name:'tickets',
+    
     meta:{
       private:true
     },
+    component:TicketsLayout,
+    children:[{
+      path:'',
+      name:'tickets',
+      component:Tickets
+    },{
+      name:'newTicket',
+      path:'newTicket',
+      component:NewTicket
+    }]
 
-    component:TicketsLayout
+
   }
 
 ]

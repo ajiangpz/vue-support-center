@@ -24,7 +24,9 @@ Mock.mock("/tickets", {
   }]
 });
 Mock.mock("/user", "get", { username: "pzzz" });
-export default Mock.mock("/questions",{"data|1-10":[{
+export default Mock.mock("/questions",
+{"data|1-10":[{
   title: Random.title(),
   content: Random.paragraph()
-}]});
+}]}
+);
