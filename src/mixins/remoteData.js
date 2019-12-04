@@ -24,17 +24,29 @@ export default function(resources) {
     created() {
       for (const key in resources) {
         let url = resources[key];
-        this.getResource(key, url);
+        if (typeof url === "function") {
+          this.$watch(
+            url,
+            val => {
+              this.getResource(key, val);
+            },
+            { immediate: true }
+          );
+        } else {
+          console.log(url);
+          this.getResource(key, url);
+        }
       }
     },
     methods: {
       async getResource(key, url) {
+        console.log(`调用的url${url}`);
         this.remoteDataLoading++;
         try {
           const result = await this.$axios(url);
           console.log(result.data);
-          
-          this.$data[key]=result.data
+
+          this.$data[key] = result.data;
         } catch (e) {
           console.log(e);
           this.$data.remoteErrors[key] = e;

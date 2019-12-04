@@ -6,7 +6,7 @@
     </div>
     <section v-else>
       <div v-for="(ticket,key) in tickets" class="ticket-item" :key="key">
-        <span>{{ticket.title}}</span>
+        <router-link :to="{name:'ticket',params:{id:ticket.id+''}}" >{{ticket.title}}</router-link>
         <span class="badge">{{ticket.status}}</span>
         <span class="date">{{ticket.date}}</span>
       </div>
