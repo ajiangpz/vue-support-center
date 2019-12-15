@@ -14,7 +14,11 @@ const Tickets=Mock.mock({'data|1-7':[{
   'id|+1':1,
   title:'@TITLe',
   status:`@PICK(["new", "working", "done"])`,
-  date: '@DATE'
+  date: '@DATE',
+  user:{
+    username:'@NAME'
+  },
+  description:'@paragraph'
 }]})
 Mock.mock("/login", "post", function(options) {
   const { username } = JSON.parse(options.body);
