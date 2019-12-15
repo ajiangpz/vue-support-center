@@ -277,7 +277,7 @@ form {
   &.page {
     position: fixed;
     bottom: 64px;
-    left: calc(50% - $size / 2);
+    // left: calc(50% - $size / 2);
     width: $size;
     height: $size;
     padding: 16px;
