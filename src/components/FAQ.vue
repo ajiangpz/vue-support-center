@@ -5,11 +5,10 @@
       Can't load the questions
     </div>
     <Loading v-if="remoteDataBusy"></Loading>
-    <section class="list">
+    <section>
       <article v-for="(question,key) in questionList" :key="key">
         <h2 v-html="question.title"></h2>
         <p v-html="question.content"></p>
-        <p></p>
       </article>
     </section>
   </main>
@@ -20,11 +19,3 @@ export default {
   mixins: [RemoteData({ questionList: "/questions" })]
 };
 </script>
-<style lang="scss" scoped>
-.faq {
-  .list {
-    height: 300px;
-    overflow: auto;
-  }
-}
-</style>

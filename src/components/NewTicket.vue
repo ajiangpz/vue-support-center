@@ -30,11 +30,6 @@ export default {
       description: ""
     };
   },
-  watch:{
-    title(val){
-      console.log(val)
-    }
-  },
   mixins:[PersistantData('NewTicket',['title','description'])],
 
   computed: {

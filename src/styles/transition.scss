@@ -1,0 +1,9 @@
+.fade-enter{
+  transform:translateY(-10px)
+}
+.fade-enter-to{
+  transform: translateY(10px)
+}
+.fade-enter-active{
+  transition: all 1s;
+}

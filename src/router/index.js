@@ -7,6 +7,7 @@ import TicketsLayout from "../components/TicketsLayout.vue";
 import Tickets from "../components/Tickets.vue";
 import NewTicket from "../components/NewTicket.vue";
 import Ticket from "../components/Ticket.vue";
+import NotFound from "../components/NotFound.vue";
 Vue.use(VueRouter);
 
 const routes = [
@@ -46,14 +47,34 @@ const routes = [
         path: "newTicket",
         component: NewTicket
       },
-      { path: ":id", name: "ticket", component: Ticket,props:true }
+      { path: ":id", name: "ticket", component: Ticket, props: true }
     ]
+  },
+  {
+    path: "*",
+    component: NotFound
   }
 ];
 
 const router = new VueRouter({
   mode: "history",
   base: process.env.BASE_URL,
+  scrollBehavior(to, from, savePosition) {
+    if (savePosition) {
+      console.log(savePosition)
+      return savePosition;
+    }
+    if (to.hash) {
+      console.log(to.hash)
+      return {
+        selector: to.hash
+      };
+    }
+    return {
+      x: 0,
+      y: 0
+    };
+  },
   routes
 });
 

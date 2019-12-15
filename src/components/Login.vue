@@ -39,7 +39,7 @@
           <button type="button" class="secondary" @click="mode = 'signup'">
             Sign up
           </button>
-          <button type="button" class="secondary" :disabled="!valid" @click="login">
+          <button type="button"  :disabled="!valid" @click="login">
             Login
           </button>
         </template>
@@ -47,7 +47,7 @@
           <button type="button" class="secondary" @click="mode = 'login'">
             Back to Login
           </button>
-          <button type="submit" class="secondary" :disabled="!valid" @click="signup">
+          <button type="submit"  :disabled="!valid" @click="signup">
             Create account
           </button>
         </template>
@@ -119,3 +119,4 @@ export default {
   }
 };
 </script>
+

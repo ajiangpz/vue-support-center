@@ -33,18 +33,15 @@ export default function(resources) {
             { immediate: true }
           );
         } else {
-          console.log(url);
           this.getResource(key, url);
         }
       }
     },
     methods: {
       async getResource(key, url) {
-        console.log(`调用的url${url}`);
         this.remoteDataLoading++;
         try {
           const result = await this.$axios(url);
-          console.log(result.data);
 
           this.$data[key] = result.data;
         } catch (e) {

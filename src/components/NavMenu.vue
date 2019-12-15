@@ -1,5 +1,5 @@
 <template>
-  <nav class="menu">
+  <nav class="nav">
     <router-link :to="{ name: 'home' }" exact>Home</router-link>
     <router-link :to="{ name: 'faq' }">FAQ</router-link>
     <router-link :to="{ name: 'tickets' }">Tickets</router-link>
@@ -31,23 +31,10 @@ export default {
   }
 }
 </script>
+
 <style lang="scss" scoped>
-@import "../styles/imports.scss";
-.menu {
-  display: flex;
-  .router-link-active {
-    border-bottom-color: $primary-color;
-  }
-  .spacer{
-    flex: 1;
-  }
-  a{
-    text-decoration: none;
-    color: #222;
-    border-bottom: 2px solid transparent;
-    padding: 0 10px;
-    flex: none;
-    user-select: none;
-  }
+@import '../styles/imports.scss';
+.router-link-active {
+  border-bottom-color: $primary-color;
 }
 </style>

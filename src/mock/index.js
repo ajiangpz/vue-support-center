@@ -1,5 +1,4 @@
 import Mock from "mockjs";
-const Random = Mock.Random;
 Mock.setup({
   timeout: 300
 });
@@ -24,7 +23,6 @@ Mock.mock("/login", "post", function(options) {
 Mock.mock(/\/ticket\/\w+$/,function(option){
   const arr=option.url.split('/');
   const id=arr[arr.length-1];
-  console.log(Tickets.data)
   const ticket= Tickets.data.filter(ticket=>ticket.id===parseInt(id))[0]
   return {data:ticket}
 })
@@ -33,7 +31,7 @@ Mock.mock("/tickets", Tickets);
 Mock.mock("/user", "get", { username: "pzzz" });
 export default Mock.mock("/questions",
 {"data|1-10":[{
-  title: Random.title(),
-  content: Random.paragraph()
+  title: `@title`,
+  content:` @paragraph`
 }]}
 );

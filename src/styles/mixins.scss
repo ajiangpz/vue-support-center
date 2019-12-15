@@ -1,0 +1,26 @@
+@mixin v-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+@mixin h-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+@mixin space-between-x($margin) {
+  margin-right: $margin;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+@mixin space-between-y($margin) {
+  margin-bottom: $margin;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

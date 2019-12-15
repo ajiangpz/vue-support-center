@@ -1,16 +1,18 @@
 <template>
-  <component
-    :is="element"
-    v-bind="$attrs"
-    type="text"
-    class="input"
-    :class="inputClass"
-    @input="$emit('update', $event.currentTarget.value)"
-    :name="name"
-    :value.prop="text"
-    :placeholder="placeholder"
-  >
-  </component>
+  <div class="row">
+    <component
+      :is="element"
+      v-bind="$attrs"
+      type="text"
+      class="input"
+      :class="inputClass"
+      @input="$emit('update', $event.currentTarget.value)"
+      :name="name"
+      :value.prop="text"
+      :placeholder="placeholder"
+    >
+    </component>
+  </div>
 </template>
 <script>
 export default {

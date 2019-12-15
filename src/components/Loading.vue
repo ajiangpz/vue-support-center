@@ -1,22 +1,5 @@
 <template>
-  <div class="donut"></div>
+  <div class="loading">
+    <div></div>
+  </div>
 </template>
-<style lang="scss" scoped>
-@keyframes donut-spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-.donut {
-  display: inline-block;
-  border: 4px solid rgba(0, 0, 0, 0.1);
-  border-left:4px solid #f60035;
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  animation: donut-spin 1.2s linear infinite;
-}
-</style>

@@ -53,3 +53,10 @@ export default {
   }
 };
 </script>
+<style lang="scss" scoped>
+.form {
+  .content {
+    max-width: 400px;
+  }
+}
+</style>
